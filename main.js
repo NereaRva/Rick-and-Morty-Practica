@@ -20,11 +20,10 @@ const getDataApi = async (valueInput) => {
   const data = (data)=>{
     ulList.innerHTML = '';
     for (const character of data.results) {
+      const li = document.createElement("li")
       const card = document.createElement("div")
       card.classList.add("card")
-      ulList.appendChild(card)
-
-      const li = document.createElement("li")
+      li.appendChild(card)
       ulList.appendChild(li)
       const text = document.createTextNode(character.name)
       
@@ -58,4 +57,7 @@ const getDataApi = async (valueInput) => {
   function changeColor(card) {
     card.classList.toggle("favorited")
   }
+
+  
+  
 
